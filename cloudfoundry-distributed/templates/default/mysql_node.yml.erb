@@ -1,0 +1,16 @@
+---
+local_db: sqlite3:/var/vcap/services/mysql/mysql_node.db
+base_dir: /var/vcap/services/mysql/
+ip_route: <%= @host %>
+mbus: nats://<%= @mbus_ip %>:4222
+log_level: DEBUG
+pid: /var/vcap/sys/run/mysql_node.pid
+available_storage: 1024
+node_id: <%= @node_id %> 
+max_db_size: 20
+max_long_query: 3
+mysql:
+  host: <%= @host %>
+  port: 3306
+  user: root
+  pass: <%= @pass %>

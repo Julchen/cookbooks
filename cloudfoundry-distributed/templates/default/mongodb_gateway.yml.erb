@@ -1,0 +1,14 @@
+---
+cloud_controller_uri: <%= @cloud_controller_uri %> 
+service:
+  name: mongodb
+  version: "1.8"
+  description: 'MongoDB NoSQL store'
+  plans: ['free']
+  tags: ['mongodb', 'mongodb-1.6', 'nosql']
+host: <%= @host %>
+token: "0xdeadbeef"
+mbus: nats://<%= @mbus_ip %>:4222
+log_level: DEBUG
+pid: /var/vcap/sys/run/mongodb_service.pid
+

@@ -1,0 +1,16 @@
+---
+cloud_controller_uri: <%= @cloud_controller_uri %> 
+service:
+  name: mysql
+  version: "5.1"
+  description: 'MySQL database service'
+  plans: ['free']
+  tags: ['mysql', 'mysql-5.1', 'relational']
+host: <%= @host %>
+token: "0xdeadbeef"
+log_level: DEBUG
+mysql_mbus: nats://<%= @mbus_ip %>:4222
+service_mbus: nats://<%= @mbus_ip %>:4222
+pid: /var/vcap/sys/run/mysql_service.pid
+node_timeout: 2
+

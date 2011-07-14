@@ -1,0 +1,15 @@
+---
+cloud_controller_uri: <%= @cloud_controller_uri %> 
+service:
+  name: redis
+  version: "2.2"
+  description: 'Redis key-value store service'
+  plans: ['free']
+  tags: ['redis', 'redis-2.2', 'key-value', 'nosql']
+host: <%= @host %>
+token: "0xdeadbeef"
+log_level: DEBUG
+redis_mbus: nats://<%= @mbus_ip %>:4222
+service_mbus: nats://<%= @mbus_ip %>:4222
+pid: /var/vcap/sys/run/redis_service.pid
+
